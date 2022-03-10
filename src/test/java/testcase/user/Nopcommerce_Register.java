@@ -20,10 +20,11 @@ public class Nopcommerce_Register extends BaseTest {
     private UserHomePageObject userHomePage;
     private UserRegisterPageObject userRegisterPage;
 
-    public static String firstNameErrorMessage, lastNameErrorMessage, emailErrorMessage, passwordErrorMessage, confirmPasswordErrorMessage,
+    protected String firstNameErrorMessage, lastNameErrorMessage, emailErrorMessage, passwordErrorMessage, confirmPasswordErrorMessage,
             registeredSuccessMessage, registerErrorMessage;
     public static String firstName, lastName, dayOfBirthDay, dayOfBirthMonth, dayOfBirthYear, emailValue, companyName, password,
             confirmPassword, wrongPassword;
+    public static String emailValueMain, passwordMain;
 
     @Parameters({"browser", "urlName"})
     @BeforeClass
@@ -86,9 +87,9 @@ public class Nopcommerce_Register extends BaseTest {
         dayOfBirthDay = "7";
         dayOfBirthMonth = "January";
         dayOfBirthYear = "1992";
-        emailValue = "hoangle" + generateNumber() + "@gmail.com";
+        emailValueMain = "hoangle" + generateNumber() + "@gmail.com";
         companyName = "Freelancer";
-        password = "hoangle01";
+        passwordMain = "hoangle01";
         confirmPassword = "hoangle01";
 
         registeredSuccessMessage = "Your registration completed";
@@ -113,14 +114,14 @@ public class Nopcommerce_Register extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Step06: Select Date Of Birth Year: " + dayOfBirthYear);
         userRegisterPage.selectDynamicDateOfBirth("DateOfBirthYear", dayOfBirthYear);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Step07: Enter To Email TextBox: " + emailValue);
-        userRegisterPage.enterToDynamicTextBox("Email", emailValue);
+        ExtentTestManager.getTest().log(Status.INFO, "Step07: Enter To Email TextBox: " + emailValueMain);
+        userRegisterPage.enterToDynamicTextBox("Email", emailValueMain);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step08: Enter To Company TextBox: " + companyName);
         userRegisterPage.enterToDynamicTextBox("Company", companyName);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Step09: Enter To Password TextBox: " + password);
-        userRegisterPage.enterToDynamicTextBox("Password", password);
+        ExtentTestManager.getTest().log(Status.INFO, "Step09: Enter To Password TextBox: " + passwordMain);
+        userRegisterPage.enterToDynamicTextBox("Password", passwordMain);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step10: Enter To Confirm Password TextBox: " + confirmPassword);
         userRegisterPage.enterToDynamicTextBox("ConfirmPassword", confirmPassword);
@@ -162,14 +163,14 @@ public class Nopcommerce_Register extends BaseTest {
         ExtentTestManager.getTest().log(Status.INFO, "Step06: Select Date Of Birth Year: " + dayOfBirthYear);
         userRegisterPage.selectDynamicDateOfBirth("DateOfBirthYear", dayOfBirthYear);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Step07: Enter To Email TextBox: " + emailValue);
-        userRegisterPage.enterToDynamicTextBox("Email", emailValue);
+        ExtentTestManager.getTest().log(Status.INFO, "Step07: Enter To Email TextBox: " + emailValueMain);
+        userRegisterPage.enterToDynamicTextBox("Email", emailValueMain);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step08: Enter To Company TextBox: " + companyName);
         userRegisterPage.enterToDynamicTextBox("Company", companyName);
 
-        ExtentTestManager.getTest().log(Status.INFO, "Step09: Enter To Password TextBox: " + password);
-        userRegisterPage.enterToDynamicTextBox("Password", password);
+        ExtentTestManager.getTest().log(Status.INFO, "Step09: Enter To Password TextBox: " + passwordMain);
+        userRegisterPage.enterToDynamicTextBox("Password", passwordMain);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step10: Enter To Confirm Password TextBox: " + confirmPassword);
         userRegisterPage.enterToDynamicTextBox("ConfirmPassword", confirmPassword);

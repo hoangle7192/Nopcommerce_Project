@@ -17,4 +17,10 @@ public class UserHomePageObject extends BasePage {
         clickToElement(driver, UserHomePageUI.REGISTER_BUTTON);
         return PageGenerateManager.getUserRegisterPage(driver);
     }
+
+    public UserLoginPageObject clickToLoginButton() {
+        waitForElementClickable(driver, UserHomePageUI.LOGIN_BUTTON);
+        clickToElement(driver, UserHomePageUI.LOGIN_BUTTON);
+        return PageGenerateManager.getUserLoginPage(driver);
+    }
 }
