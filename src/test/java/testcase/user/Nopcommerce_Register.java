@@ -106,13 +106,13 @@ public class Nopcommerce_Register extends BaseTest {
         userRegisterPage.enterToDynamicTextBox("LastName", lastName);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step04: Select Date Of Birth Day: " + dayOfBirthDay);
-        userRegisterPage.selectDynamicDateOfBirth("DateOfBirthDay", dayOfBirthDay);
+        userRegisterPage.selectToDynamicDropDown("DateOfBirthDay", dayOfBirthDay);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step05: Select Date Of Birth Month: " + dayOfBirthMonth);
-        userRegisterPage.selectDynamicDateOfBirth("DateOfBirthMonth", dayOfBirthMonth);
+        userRegisterPage.selectToDynamicDropDown("DateOfBirthMonth", dayOfBirthMonth);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step06: Select Date Of Birth Year: " + dayOfBirthYear);
-        userRegisterPage.selectDynamicDateOfBirth("DateOfBirthYear", dayOfBirthYear);
+        userRegisterPage.selectToDynamicDropDown("DateOfBirthYear", dayOfBirthYear);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step07: Enter To Email TextBox: " + emailValueMain);
         userRegisterPage.enterToDynamicTextBox("Email", emailValueMain);
@@ -155,13 +155,13 @@ public class Nopcommerce_Register extends BaseTest {
         userRegisterPage.enterToDynamicTextBox("LastName", lastName);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step04: Select Date Of Birth Day: " + dayOfBirthDay);
-        userRegisterPage.selectDynamicDateOfBirth("DateOfBirthDay", dayOfBirthDay);
+        userRegisterPage.selectToDynamicDropDown("DateOfBirthDay", dayOfBirthDay);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step05: Select Date Of Birth Month: " + dayOfBirthMonth);
-        userRegisterPage.selectDynamicDateOfBirth("DateOfBirthMonth", dayOfBirthMonth);
+        userRegisterPage.selectToDynamicDropDown("DateOfBirthMonth", dayOfBirthMonth);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step06: Select Date Of Birth Year: " + dayOfBirthYear);
-        userRegisterPage.selectDynamicDateOfBirth("DateOfBirthYear", dayOfBirthYear);
+        userRegisterPage.selectToDynamicDropDown("DateOfBirthYear", dayOfBirthYear);
 
         ExtentTestManager.getTest().log(Status.INFO, "Step07: Enter To Email TextBox: " + emailValueMain);
         userRegisterPage.enterToDynamicTextBox("Email", emailValueMain);

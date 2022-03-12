@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Run Testcase Nopcommerce_MyAccount">
+
+    <listeners>
+        <listener class-name="actions.listeners.ExtentTestListener"/>
+    </listeners>
+
+    <test name="Run Testcase Nopcommerce_MyAccount On Firefox">
+        <parameter name="browser" value="Firefox"/>
+        <parameter name="urlName" value="User"/>
+        <classes>
+            <class name="testcase.user.Nopcommerce_Register">
+                <methods>
+                    <include name="TC_03_Register_By_Valid_Email"/>
+                </methods>
+            </class>
+            <class name="testcase.user.Nopcommerce_MyAccount"/>
+        </classes>
+    </test>
+
+    <!-- <test name="Run Testcase Nopcommerce_Register On FireFox">
+         <parameter name="browser" value="Firefox"/>
+         <parameter name="urlName" value="User"/>
+         <classes>
+             <class name="testcase.user.Nopcommerce_Register"/>
+         </classes>
+     </test>
+
+     <test name="Run Testcase Nopcommerce_Register On Edge">
+         <parameter name="browser" value="Edge"/>
+         <parameter name="urlName" value="User"/>
+         <classes>
+             <class name="testcase.user.Nopcommerce_Register"/>
+         </classes>
+     </test>-->
+
+</suite>

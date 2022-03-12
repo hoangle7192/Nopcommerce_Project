@@ -12,7 +12,7 @@
         <classes>
             <class name="testcase.user.Nopcommerce_Register">
                 <methods>
-                    <include name="TC_03_Register_By_Valid_Email" />
+                    <include name="TC_03_Register_By_Valid_Email"/>
                 </methods>
             </class>
             <class name="testcase.user.Nopcommerce_Login"/>
@@ -25,7 +25,7 @@
         <classes>
             <class name="testcase.user.Nopcommerce_Register">
                 <methods>
-                    <include name="TC_03_Register_By_Valid_Email" />
+                    <include name="TC_03_Register_By_Valid_Email"/>
                 </methods>
             </class>
             <class name="testcase.user.Nopcommerce_Login"/>
@@ -38,7 +38,7 @@
         <classes>
             <class name="testcase.user.Nopcommerce_Register">
                 <methods>
-                    <include name="TC_03_Register_By_Valid_Email" />
+                    <include name="TC_03_Register_By_Valid_Email"/>
                 </methods>
             </class>
             <class name="testcase.user.Nopcommerce_Login"/>
