@@ -11,7 +11,7 @@ public class GlobalConstants {
 
     public static final String UPLOAD_FILE_FOLDER = PROJECT_PATH + File.separator + "uploadFiles" + File.separator;
 
-    public static final String ADBLOCK_EXTENSION_OF_CHROME = PROJECT_PATH + File.separator + "browserExtensions" + File.separator + "Adblock_extension_Chrome.crx";
+    public static final String ADBLOCK_EXTENSION_OF_CHROME = PROJECT_PATH + File.separator + "browserExtensions" + File.separator + "Ublock_Chrome.crx";
     public static final String ADBLOCK_EXTENSION_OF_FIREFOX = PROJECT_PATH + File.separator + "browserExtensions" + File.separator + "adblocker-firefox.xpi";
 
     public static final int LONG_TIME_OUT = 30;

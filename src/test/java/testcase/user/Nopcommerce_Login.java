@@ -22,11 +22,11 @@ public class Nopcommerce_Login extends BaseTest {
 
     protected String emailErrorMessage, loginErrorMessage;
 
-    @Parameters({"browser","urlName"})
+    @Parameters({"browser", "urlName"})
     @BeforeClass
     public void beforeClass(String browserName, String urlName) {
         driver = getBrowserDriver(browserName, urlName);
-        userHomePage= PageGenerateManager.getUserHomePage(driver);
+        userHomePage = PageGenerateManager.getUserHomePage(driver);
         userLoginPage = userHomePage.clickToLoginButton();
     }
 

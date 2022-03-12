@@ -23,19 +23,19 @@ public class UserRegisterPageObject extends BasePage {
         return getElementText(driver, UserRegisterPageUI.DYNAMIC_ERROR_MESSAGE_OF_FIELD, errorFieldName);
     }
 
-    public void enterToDynamicTextBox(String fieldName, String emailValue) {
-        waitForElementVisible(driver, UserRegisterPageUI.DYNAMIC_FIELD, fieldName);
-        sendKeyToElement(driver, UserRegisterPageUI.DYNAMIC_FIELD, emailValue, fieldName);
+    public void enterToDynamicTextBox(String fieldName, String enterValue) {
+        waitForElementVisible(driver, UserRegisterPageUI.DYNAMIC_FIELD_TEXTBOX, fieldName);
+        sendKeyToElement(driver, UserRegisterPageUI.DYNAMIC_FIELD_TEXTBOX, enterValue, fieldName);
     }
 
     public void clickToGenderRadio(String genderValue) {
-        waitForElementClickable(driver, UserRegisterPageUI.DYNAMIC_GENDER, genderValue);
-        clickToElement(driver, UserRegisterPageUI.DYNAMIC_GENDER, genderValue);
+        waitForElementClickable(driver, UserRegisterPageUI.DYNAMIC_GENDER_RADIO_BUTTON, genderValue);
+        clickToElement(driver, UserRegisterPageUI.DYNAMIC_GENDER_RADIO_BUTTON, genderValue);
     }
 
-    public void selectDynamicDateOfBirth(String dateOfBirthProperty, String selectItemName) {
-        waitForElementVisible(driver, UserRegisterPageUI.DYNAMIC_DATE_OF_BIRTH, dateOfBirthProperty);
-        selectItemInDefaultDropDown(driver, UserRegisterPageUI.DYNAMIC_DATE_OF_BIRTH, selectItemName, dateOfBirthProperty);
+    public void selectToDynamicDropDown(String dateOfBirthProperty, String selectItemName) {
+        waitForElementVisible(driver, UserRegisterPageUI.DYNAMIC_DATE_OF_BIRTH_DROP_DOWN, dateOfBirthProperty);
+        selectItemInDefaultDropDown(driver, UserRegisterPageUI.DYNAMIC_DATE_OF_BIRTH_DROP_DOWN, selectItemName, dateOfBirthProperty);
     }
 
     public String getRegisteredSuccessMessage() {
