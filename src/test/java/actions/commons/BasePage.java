@@ -213,11 +213,11 @@ public class BasePage {
         return new Select(getWebElement(driver, getDynamicXpath(locatorType, dynamicValue))).getFirstSelectedOption().getText();
     }
 
-    protected boolean isDropDownMultipe(WebDriver driver, String locatorType) {
+    protected boolean isDropDownMultiple(WebDriver driver, String locatorType) {
         return new Select(getWebElement(driver, locatorType)).isMultiple();
     }
 
-    protected boolean isDropDownMultipe(WebDriver driver, String locatorType, String... dynamicValues) {
+    protected boolean isDropDownMultiple(WebDriver driver, String locatorType, String... dynamicValues) {
         return new Select(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues))).isMultiple();
     }
 

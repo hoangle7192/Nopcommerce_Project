@@ -10,24 +10,28 @@
         <parameter name="browser" value="Chrome"/>
         <parameter name="urlName" value="User"/>
         <classes>
-            <class name="testcase.user.Nopcommerce_Register"/>
+            <class name="testcase.user.Nopcommerce_Register">
+                <methods>
+                    <include name="TC_05_Register_By_Password_Less_Than_Six_Character" />
+                </methods>
+            </class>
         </classes>
     </test>
 
-    <test name="Run Testcase Nopcommerce_Register On FireFox">
-        <parameter name="browser" value="Firefox"/>
-        <parameter name="urlName" value="User"/>
-        <classes>
-            <class name="testcase.user.Nopcommerce_Register"/>
-        </classes>
-    </test>
+    <!--    <test name="Run Testcase Nopcommerce_Register On FireFox">
+            <parameter name="browser" value="Firefox"/>
+            <parameter name="urlName" value="User"/>
+            <classes>
+                <class name="testcase.user.Nopcommerce_Register"/>
+            </classes>
+        </test>
 
-    <test name="Run Testcase Nopcommerce_Register On Edge">
-        <parameter name="browser" value="Edge"/>
-        <parameter name="urlName" value="User"/>
-        <classes>
-            <class name="testcase.user.Nopcommerce_Register"/>
-        </classes>
-    </test>
+        <test name="Run Testcase Nopcommerce_Register On Edge">
+            <parameter name="browser" value="Edge"/>
+            <parameter name="urlName" value="User"/>
+            <classes>
+                <class name="testcase.user.Nopcommerce_Register"/>
+            </classes>
+        </test>-->
 
 </suite>
