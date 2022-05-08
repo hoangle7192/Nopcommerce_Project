@@ -1,0 +1,6 @@
+{
+  "url": "https://demo.guru99.com/v3",
+  "host": "jdbc:mysql://localhost\"3303/bankguru",
+  "username": "dev3",
+  "password": "passdev3"
+}

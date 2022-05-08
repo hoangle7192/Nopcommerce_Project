@@ -150,6 +150,6 @@ public class Nopcommerce_Login extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-        quitDriver();
+        closeBrowserAndDriver();
     }
 }

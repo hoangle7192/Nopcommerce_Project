@@ -158,7 +158,7 @@ public class BasePage {
     protected void clickToElement(WebDriver driver, String locatorType) {
         try {
             getWebElement(driver, locatorType).click();
-        } catch (Exception e) {
+        } catch (StaleElementReferenceException e) {
             e.printStackTrace();
         }
     }
@@ -228,7 +228,7 @@ public class BasePage {
         for (WebElement itemName : ItemNames) {
             if (itemName.getText().trim().equals(selectItemName)) {
                 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-                jsExecutor.executeScript("arguments[0].scrollIntoView(true);", selectItemName);
+                jsExecutor.executeScript("arguments[0].scrollIntoView(true);", itemName);
                 sleepInSecond(1);
                 itemName.click();
                 sleepInSecond(1);
@@ -244,7 +244,7 @@ public class BasePage {
         for (WebElement itemName : ItemNames) {
             if (itemName.getText().trim().equals(selectItemName)) {
                 JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-                jsExecutor.executeScript("arguments[0].scrollIntoView(true);", selectItemName);
+                jsExecutor.executeScript("arguments[0].scrollIntoView(true);", itemName);
                 sleepInSecond(1);
                 itemName.click();
                 sleepInSecond(1);
@@ -305,6 +305,10 @@ public class BasePage {
         return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).isDisplayed();
     }
 
+    protected void overrideImplicitTimeOut(WebDriver driver, long timeOut) {
+        driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
+    }
+
     protected boolean isElementUndisplayed(WebDriver driver, String locatorType) {
         overrideImplicitTimeOut(driver, GlobalConstants.SHORT_TIME_OUT);
         List<WebElement> elements = getListWebElements(driver, locatorType);
@@ -335,10 +339,6 @@ public class BasePage {
             System.out.println("Element In Dom");
             return false;
         }
-    }
-
-    protected void overrideImplicitTimeOut(WebDriver driver, long timeOut) {
-        driver.manage().timeouts().implicitlyWait(timeOut, TimeUnit.SECONDS);
     }
 
     protected boolean isElementEnable(WebDriver driver, String locatorType) {
@@ -536,6 +536,12 @@ public class BasePage {
     protected void scrollToElement(WebDriver driver, String locatorType) {
         //jsExecutor = (JavascriptExecutor) driver;
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locatorType));
+    }
+
+    protected String getElementValueByJSXpath(WebDriver driver, String xpathLocator) {
+        //jsExecutor = (JavascriptExecutor) driver;
+        xpathLocator = xpathLocator.replace("xpath=", "");
+        return (String) ((JavascriptExecutor) driver).executeScript("return $(document.evaluate(\"" + xpathLocator + "\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).val()");
     }
 
     protected void sendKeyToElementByJS(WebDriver driver, String locatorType, String sendKeyValue) {

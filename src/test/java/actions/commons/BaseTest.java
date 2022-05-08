@@ -20,7 +20,7 @@ public class BaseTest {
     WebDriver driver;
     ChromeOptions options = new ChromeOptions();
 
-    public String getUrlAccess(String accessUrlName) {
+    protected String getUrlAccess(String accessUrlName) {
         String url = null;
         urlList urlName = urlList.valueOf(accessUrlName.toUpperCase());
         if (urlName == urlList.USER) {
@@ -31,13 +31,14 @@ public class BaseTest {
         return url;
     }
 
-    public WebDriver getBrowserDriver(String browserName, String accessUrlName) {
+    protected WebDriver getBrowserDriver(String browserName, String url) {
         BrowserList browser = BrowserList.valueOf(browserName.toUpperCase());
         switch (browser) {
             case CHROME -> {
                 WebDriverManager.chromedriver().setup();
                 options.addExtensions(new File(GlobalConstants.ADBLOCK_EXTENSION_OF_CHROME));
                 driver = new ChromeDriver(options);
+                break;
             }
             case FIREFOX -> {
                 WebDriverManager.firefoxdriver().setup();
@@ -45,22 +46,25 @@ public class BaseTest {
                 FirefoxProfile profile = new FirefoxProfile();
                 profile.addExtension(new File(GlobalConstants.ADBLOCK_EXTENSION_OF_FIREFOX));
                 driver = new FirefoxDriver(firefoxoptions);
+                break;
             }
             case EDGE -> {
                 WebDriverManager.edgedriver().setup();
                 driver = new EdgeDriver();
+                break;
             }
             case H_CHROME -> {
                 WebDriverManager.chromedriver().setup();
                 options.addArguments("--headless");
                 options.addArguments("window-size=1920x1080");
                 driver = new ChromeDriver(options);
+                break;
             }
             default -> throw new IllegalArgumentException("This Browser Is Not Support");
         }
         driver.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIME_OUT, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        driver.get(getUrlAccess(accessUrlName));
+        driver.get(url);
         return driver;
     }
 
@@ -73,14 +77,14 @@ public class BaseTest {
         return random.nextInt(999999);
     }
 
-    protected void quitDriver() {
+    protected void closeBrowserAndDriver() {
         String cmd = "";
         try {
             String osName = System.getProperty("os.name").toLowerCase();
             //log.info("OS name = " + osName);
 
             String driverInstanceName = driver.toString().toLowerCase();
-            //log.info("Driver instance name = " + osName);
+            //log.info("Driver instance name = " + driverInstanceName);
 
             if (driverInstanceName.contains("chrome")) {
                 if (osName.contains("window")) {
@@ -121,7 +125,6 @@ public class BaseTest {
                 driver.quit();
             }
         } catch (Exception e) {
-            e.printStackTrace();
             //log.info(e.getMessage());
         } finally {
             try {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite  name="Run Testcase demoMavenSurefirePlugin">
+
+    <listeners>
+        <listener class-name="actions.listeners.ExtentTestListener"/>
+    </listeners>
+
+    <test name="Run Testcase Nopcommerce_Register On Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="testcase.user.demoMavenSurefirePlugin" />
+        </classes>
+    </test>
+
+</suite>

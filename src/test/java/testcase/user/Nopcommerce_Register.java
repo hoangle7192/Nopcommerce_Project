@@ -222,6 +222,6 @@ public class Nopcommerce_Register extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-        quitDriver();
+        closeBrowserAndDriver();
     }
 }

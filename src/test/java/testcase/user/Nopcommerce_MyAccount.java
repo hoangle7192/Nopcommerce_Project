@@ -282,6 +282,6 @@ public class Nopcommerce_MyAccount extends BaseTest {
 
     @AfterClass(alwaysRun = true)
     public void afterClass() {
-        quitDriver();
+        closeBrowserAndDriver();
     }
 }
